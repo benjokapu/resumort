@@ -3,8 +3,8 @@ import path from "path"
 import { conn } from "../db.js"
 
 const controller = {
-    index: async (req, res) => {
-      res.render("index");
+    todosLosArchivos: async (req, res) => {
+      res.render("todosLosArchivos");
     }
   };
 
