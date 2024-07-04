@@ -1,8 +1,11 @@
-import mysql from "mysql2/promise";
+import mysql from 'mysql2/promise';
 
-export const conn = await mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: 'rootroot', 
-    database: "resumort"
+// Configuración de la conexión a la base de datos
+const conn = mysql.createPool({
+  host: 'localhost',
+  user: 'root',
+  password: 'rootroot',
+  database: 'resumort'
 });
+
+export { conn };

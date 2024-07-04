@@ -1,10 +1,17 @@
-const fs = require('fs');
-const path = require('path');
+import fs from "fs"
+import path from "path"
+import { conn } from "../db.js"
 
 const controller = {
-    index: (req, res) => {
-        res.render("index");
+    index: async (req, res) => {
+      try {
+        const [rows, fields] = await conn.query('SELECT * FROM subjects');
+        res.json(rows);
+      } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error al obtener los datos' });
+      }
     }
-}
+  };
 
-module.exports = controller;
+export default controller;
