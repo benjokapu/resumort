@@ -1,0 +1,20 @@
+.header {
+    position: relative;
+    background-color: #070d24;
+    width: 100vw;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.logo {
+    position: relative;
+    color: #fcbd35;
+    font-weight: 700;
+    font-size: 1.4em;
+    padding-left: 3%;
+}
+
+.buscador {
+    position: relative;
+    left: 3%;
+}
