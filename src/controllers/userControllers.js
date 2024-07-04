@@ -3,9 +3,9 @@ import path from "path"
 import { conn } from "../db.js"
 
 const controller = {
-    index: async (req, res) => {
-      res.render("index");
+    myUser: async (req, res) => {
+        res.render("myUser")
     }
-  };
+};
 
 export default controller;
