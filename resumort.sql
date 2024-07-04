@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-07-2024 a las 14:08:59
+-- Tiempo de generación: 04-07-2024 a las 17:53:00
 -- Versión del servidor: 5.7.17-log
 -- Versión de PHP: 5.6.30
 
@@ -23,18 +23,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `files`
+-- Estructura de tabla para la tabla `especialidad`
 --
 
-CREATE TABLE `files` (
+CREATE TABLE `especialidad` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(50) NOT NULL,
-  `aclaraciones` text NOT NULL,
-  `fecha` datetime NOT NULL,
-  `dni_users` int(11) NOT NULL,
-  `year_Years` int(11) NOT NULL,
-  `subject_Subjects` int(11) NOT NULL
+  `nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `especialidad`
+--
+
+INSERT INTO `especialidad` (`id`, `nombre`) VALUES
+(1, 'tic'),
+(2, 'gestion'),
+(3, 'medios'),
+(4, 'diseño');
 
 -- --------------------------------------------------------
 
@@ -46,6 +51,21 @@ CREATE TABLE `subjectsavanzado` (
   `nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `subjectsavanzado`
+--
+
+INSERT INTO `subjectsavanzado` (`nombre`) VALUES
+('cultura judia'),
+('educacion fisica'),
+('educacion judia'),
+('etica'),
+('fisica'),
+('geografia'),
+('historia'),
+('lengua'),
+('matematica');
+
 -- --------------------------------------------------------
 
 --
@@ -53,6 +73,7 @@ CREATE TABLE `subjectsavanzado` (
 --
 
 CREATE TABLE `subjectsbasico` (
+  `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -60,19 +81,19 @@ CREATE TABLE `subjectsbasico` (
 -- Volcado de datos para la tabla `subjectsbasico`
 --
 
-INSERT INTO `subjectsbasico` (`nombre`) VALUES
-('arte'),
-('biologia'),
-('educacion fisica'),
-('educacion judia'),
-('educacion tecnologica'),
-('etica'),
-('geografia'),
-('hebreo'),
-('historia'),
-('ingles'),
-('lengua'),
-('matematica');
+INSERT INTO `subjectsbasico` (`id`, `nombre`) VALUES
+(1, 'arte'),
+(2, 'biologia'),
+(3, 'educacion fisica'),
+(4, 'educacion judia'),
+(5, 'educacion tecnologica'),
+(6, 'etica'),
+(7, 'geografia'),
+(8, 'hebreo'),
+(9, 'historia'),
+(10, 'ingles'),
+(11, 'lengua'),
+(12, 'matematica');
 
 -- --------------------------------------------------------
 
@@ -102,9 +123,15 @@ CREATE TABLE `years` (
 --
 
 --
--- Indices de la tabla `files`
+-- Indices de la tabla `especialidad`
 --
-ALTER TABLE `files`
+ALTER TABLE `especialidad`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `subjectsbasico`
+--
+ALTER TABLE `subjectsbasico`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -118,10 +145,15 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT de la tabla `files`
+-- AUTO_INCREMENT de la tabla `especialidad`
 --
-ALTER TABLE `files`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `especialidad`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `subjectsbasico`
+--
+ALTER TABLE `subjectsbasico`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
