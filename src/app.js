@@ -1,7 +1,7 @@
 // Importamos Express y Path
 import express from "express"
-let app = express();
 import path from "path"
+let app = express();
 
 // Configuramos Public y EJS
 app.use(express.static("./public"));
