@@ -23,7 +23,7 @@ const upload = multer({ storage: storage });
 import archivosController from "../controllers/archivosControllers.js";
 
 router.get("/todosLosArchivos", archivosController.todosLosArchivos);
-router.post("/subirArchivos", upload.single('file'), archivosController.subirArchivoProcesar); // Uso de multer middleware
+router.post("/subirArchivos", upload.single('file'), archivosController.subirArchivoProcesar);
 router.get("/subirArchivos", archivosController.subirArchivos);
 router.get("/subidoCorrectamente", archivosController.subidoCorreactamente);
 

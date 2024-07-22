@@ -12,6 +12,7 @@ const controller = {
         const apellido = req.body.apellido;
         const mail = req.body.mail;
         const password = req.body.password;
+        const admin = 0;
 
         console.log(
             dni,
@@ -21,17 +22,15 @@ const controller = {
             password
         );
 
-        res.redirect("/");
-
-        /* const sql = 'INSERT INTO users (dni, nombre, apellido, mail, password) VALUES (?, ?, ?, ?, ?)';
+        const sql = 'INSERT INTO users (dni, nombre, apellido, mail, password, admin) VALUES (?, ?, ?, ?, ?, ?)';
 
         try {
-            await conn.query(sql, [dni, nombre, apellido, mail, password]);
+            await conn.query(sql, [dni, nombre, apellido, mail, password, admin]);
             res.redirect('/');
         } catch (err) {
             console.error(err);
             res.status(500).send('Error al guardar el usuario en la base de datos');
-        } */
+        }
     },
     registerUser: async (req, res) => {
         res.render("registerUser");

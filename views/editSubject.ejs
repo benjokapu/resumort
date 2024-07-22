@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit subject</title>
+</head>
+<body>
+    <form action="/subjects/editSubject/<%= materia.id %>" method="post">
+        <input type="number" name="year" value="<%= materia.year %>" required><br>
+        <input type="text" name="nombre" value="<%= materia.nombre %>" required><br>
+        <input type="text" name="especialidad" value="<%= materia.especialidad %>" required><br>
+        <button type="submit">Editar Materia</button>
+    </form>
+</body>
+</html>
