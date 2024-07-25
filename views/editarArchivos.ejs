@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Archivos</title>
+</head>
+
+<body>
+    <h1>Editar Archivos</h1>
+    <form action="/archivos/editarArchivo/<%= archivo.id %>" method="post" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" value="<%= archivo.nombre %>" required><br>
+        <label for="aclaraciones">Aclaraciones:</label>
+        <input name="aclaraciones" value="<%= archivo.aclaraciones %>"></input><br>
+        <label for="subjectYearId">Materia ID:</label>
+        <input type="number" name="subjectYearId" value="<%= archivo.subjectYearId %>" required><br>
+        <label for="status">Estado:</label>
+        <select name="status">
+            <option value="1" <%= archivo.status == 1 ? 'selected' : '' %>>Activo</option>
+            <option value="0" <%= archivo.status == 0 ? 'selected' : '' %>>Inactivo</option>
+        </select><br>
+        <input type="file" name="file" accept=".doc,.docx,.xlsx,.ppt,.pdf"><br>
+        <button type="submit">Editar Archivo</button>
+    </form>
+</body>
+</html>

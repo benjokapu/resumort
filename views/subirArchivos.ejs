@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subir Archivos</title>
 </head>
+
 <body>
     <h1>Subir Archivos</h1>
     <form action="/archivos/subirArchivos" method="post" enctype="multipart/form-data">
@@ -12,9 +13,7 @@
         <textarea name="aclaraciones" placeholder="Aclaraciones"></textarea><br>
         <input type="number" name="users_dni" placeholder="DNI del usuario" required><br>
         <input type="number" name="subjectYearId" placeholder="ID del año de la materia" required><br>
-        <input type="number" name="especialidad_id" placeholder="ID de la especialidad" required><br>
-        <input type="number" name="status" placeholder="Status" required><br>
-        <input type="file" name="file" required><br>
+        <input type="file" name="file" accept=".doc,.docx,.xlsx,.ppt,.pdf" required><br>
         <button type="submit">Subir Archivo</button>
     </form>
 </body>

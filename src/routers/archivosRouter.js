@@ -23,8 +23,15 @@ const upload = multer({ storage: storage });
 import archivosController from "../controllers/archivosControllers.js";
 
 router.get("/todosLosArchivos", archivosController.todosLosArchivos);
+// Subir Archivos
 router.post("/subirArchivos", upload.single('file'), archivosController.subirArchivoProcesar);
 router.get("/subirArchivos", archivosController.subirArchivos);
 router.get("/subidoCorrectamente", archivosController.subidoCorreactamente);
+// Editar Archivos
+router.post("/editarArchivo/:id", upload.single('file'), archivosController.editarArchivoProcesar);
+router.get("/editarArchivo/:id", archivosController.editarArchivo);
+// Eliminar Archivos
+router.post("/eliminarArchivo/:id", upload.none(), archivosController.eliminarArchivoProcesar);
+router.get("/eliminarArchivo/:id", archivosController.eliminarArchivo);
 
 export default router;
