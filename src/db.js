@@ -4,7 +4,7 @@ import mysql from 'mysql2/promise';
 const conn = mysql.createPool({
   host: 'localhost',
   user: 'root',
-  password: '',
+  password: 'rootroot',
   database: 'resumort'
 });
 
